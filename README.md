@@ -1,28 +1,38 @@
 # BALKANAPI
 ![Hero image](/assets/hero.png)
 
----
+This is a little FastAPI app that serves funny Balkan-style quotes. It was built for the RASPAPI project and is meant to be easy to run, poke, and share.
 
-A simple Python FastAPI service that returns Balkan-style humorous quotes developed for the RASPAPI YSWS event.
+## What it does
 
-## Endpoints
+It gives you a few simple endpoints for getting random quotes, browsing all quotes, searching by author/category, and adding your own.
 
-- `GET /` — service health check
-- `GET /quote` — returns a random funny Balkan quote
-- `GET /quotes` — returns the full list of quotes
-- `GET /quote/{quote_id}` — returns a quote by ID
-- `GET /categories` — returns available quote categories
-- `GET /search?category={category}&author={author}` — search quotes by category or author
+### Available endpoints
+
+- `GET /` — quick health check
+- `GET /quote` — random Balkan quote
+- `GET /quotes` — all quotes
+- `GET /quote/{quote_id}` — one quote by ID
+- `GET /categories` — list of available categories
+- `GET /search?category={category}&author={author}` — search by category or author
 - `POST /quote` — add a new quote
 
-## OpenAPI docs
+## Docs
 
-The interactive docs are available at:
+There is a live, interactive docs page at `/docs` once the app is running.
+
+Try it locally at:
 
 - `http://127.0.0.1:8000/docs`
 - `http://127.0.0.1:8000/redoc`
 
-## Sample POST request
+Or at the vercel domain:
+
+- `https://balkanraspapi.vercel.app/docs`
+- `https://balkanraspapi.vercel.app/redoc1`
+## Example POST
+
+Here’s how to add a new quote with `curl`:
 
 ```powershell
 curl -X POST "http://127.0.0.1:8000/quote" -H "Content-Type: application/json" -d "{
@@ -34,46 +44,47 @@ curl -X POST "http://127.0.0.1:8000/quote" -H "Content-Type: application/json" -
 
 ## Run locally
 
-1. Create a virtual environment:
+1. Make a venv:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-2. Install dependencies:
+2. Install the packages:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-3. Start the app:
+3. Start the API:
 
 ```powershell
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-4. Open `http://127.0.0.1:8000/docs` in a browser.
+4. Open the docs in your browser:
+
+```text
+http://127.0.0.1:8000/docs
+```
 
 ## Deploy to Vercel
 
-1. Go to [vercel.com](https://vercel.com) and sign up / log in.
+If you want a public URL, deploy this repo to Vercel.
 
-2. Click **"New Project"** and select your GitHub repo.
+1. Push the project to GitHub.
+2. Go to [vercel.com](https://vercel.com) and create a new project.
+3. Pick this repo and deploy.
+4. Your app should be live at something like `https://your-project-name.vercel.app`.
 
-3. Vercel auto-detects Python; confirm settings and click **"Deploy"**.
-
-4. Once deployed, your API will be live at `https://your-project-name.vercel.app`.
-
-5. Test with:
+Then try:
 
 ```bash
 curl https://your-project-name.vercel.app/docs
 curl https://your-project-name.vercel.app/quote
 ```
 
-> **Note:** The `vercel.json` file in this repo configures Vercel to run FastAPI correctly. No additional setup needed.
-
 ## Notes
 
-This project is intentionally light and fun. Add more quotes or new endpoints for categories, search, or quote submission as needed.
+This project is supposed to be playful and easy to use. If you want, you can add more quotes, make the search smarter, or let people submit quotes from a web form.
