@@ -1,5 +1,8 @@
 # RASPAPI
 ![Hero image](https://github.com/iiiypuk/rpi-icon/blob/master/512.png)
+
+---
+
 A simple Python FastAPI service that returns Balkan-style humorous quotes.
 
 ## Endpoints
@@ -54,17 +57,15 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 
 ## Deploy to Vercel
 
-1. Push your code to a GitHub repo (public or private).
+1. Go to [vercel.com](https://vercel.com) and sign up / log in.
 
-2. Go to [vercel.com](https://vercel.com) and sign up / log in.
+2. Click **"New Project"** and select your GitHub repo.
 
-3. Click **"New Project"** and select your GitHub repo.
+3. Vercel auto-detects Python; confirm settings and click **"Deploy"**.
 
-4. Vercel auto-detects Python; confirm settings and click **"Deploy"**.
+4. Once deployed, your API will be live at `https://your-project-name.vercel.app`.
 
-5. Once deployed, your API will be live at `https://your-project-name.vercel.app`.
-
-6. Test with:
+5. Test with:
 
 ```bash
 curl https://your-project-name.vercel.app/docs
