@@ -1,9 +1,9 @@
-# RASPAPI
-![Hero image](https://github.com/iiiypuk/rpi-icon/blob/master/512.png)
+# BALKANAPI
+![Hero image](/assets/hero.png)
 
 ---
 
-A simple Python FastAPI service that returns Balkan-style humorous quotes.
+A simple Python FastAPI service that returns Balkan-style humorous quotes developed for the RASPAPI YSWS event.
 
 ## Endpoints
 
